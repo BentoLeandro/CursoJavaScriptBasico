@@ -1,0 +1,20 @@
+{
+  "name": "bytebank",
+  "version": "1.0.0",
+  "description": "Projeto do bytebank",
+  "main": "8-index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BentoLeandro/CursoJavaScriptBasico.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/BentoLeandro/CursoJavaScriptBasico/issues"
+  },
+  "homepage": "https://github.com/BentoLeandro/CursoJavaScriptBasico#readme"
+}
