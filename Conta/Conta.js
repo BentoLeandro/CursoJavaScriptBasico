@@ -1,8 +1,14 @@
 export class Conta {
     constructor(saldoInicial, cliente, agencia){
+        //classe abstrata não pode ser instanciada diretamente
+        //as classes abstratas devem ser herdadas para outras classes
+        if (this.constructor == Conta){
+            //throw new Error("Você não deveria instanciar um objeto do tipo Conta Diretamente!");
+        }
+
         this._saldo = saldoInicial;
         this._cliente = cliente;
-        this._agencia = agencia;
+        this._agencia = agencia;        
     }
 
     set cliente(novoValor){
@@ -21,17 +27,18 @@ export class Conta {
         return this._saldo;
     }
 
-    sacar(valor){
-        let taxa = 1;
-        if (this._tipo == "corrente") {
-            taxa = 1.1;
-        }
+    sacar(valor){        
+        taxa = 1;
+        return this._sacar(valor, taxa);        
+    }
 
-        const valorSacado = taxa  * valor;
+    _sacar(valor, taxa){
+        const valorSacado = taxa * valor;
         if (this._saldo >= valorSacado) {
             this._saldo -= valorSacado;
             return valorSacado;
-        }        
+        }
+        return 0;
     }
     
     depositar(valor){
