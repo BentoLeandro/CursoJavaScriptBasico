@@ -8,17 +8,22 @@ import {ContaPoupanca} from "./Conta/ContaPoupanca.js";
 import {Conta} from "./Conta/Conta.js";
 
 const gerente = new Gerente("Yasmin", 8000, 987654321);
+gerente.cadastrarSenha("321");
 const diretor = new Diretor("Maria", 4000, 123456789);
 diretor.cadastrarSenha("123");
 
-const estaLogado = SistemaAutenticacao.login(diretor, "123");
-console.log(estaLogado);
+const cliente1 = new Cliente("Maria", 11122233309,"12345");
+
+const diretorEstaLogado = SistemaAutenticacao.login(diretor, "123");
+const gerenteEstaLogado = SistemaAutenticacao.login(gerente, "333");
+const clienteEstaLogado = SistemaAutenticacao.login(cliente1, "444");
+console.log(diretorEstaLogado, gerenteEstaLogado, clienteEstaLogado);
 
 //const cliente1 = new Cliente;
 //cliente1.nome = "Maria";
 //cliente1.cpf = 11122233309;
 
-const cliente1 = new Cliente("Maria", 11122233309);
+
 //const cliente2 = new Cliente("Leandro", 99922233309);
 
 const contaCorrenteMaria = new ContaCorrente(cliente1, 1001);
